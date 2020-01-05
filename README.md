@@ -4,7 +4,7 @@ RISC5 DATAPATH IMPLEMENTATION
 HEADERS
 cache.hpp
 datapath.hpp
-DATAPATH FUNCTIONS
+\nDATAPATH FUNCTIONS
 datapath.cpp
 decoder.cpp
 alu.cpp
