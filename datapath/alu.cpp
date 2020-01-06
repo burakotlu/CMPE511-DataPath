@@ -3,7 +3,7 @@ extern pc_type pc;
 int error;
 r_type alu(opcode_type opcode, func7_type func7, func3_type func3, r_type op1, r_type op2)
 {
-	/*printf("executing in alu..");*/
+	//printf("executing in alu..");
 	r_type rd_val;
 	error=0;
 	switch(opcode){
@@ -11,7 +11,7 @@ r_type alu(opcode_type opcode, func7_type func7, func3_type func3, r_type op1, r
 			switch(func7){
 				 case FUNC7_0:
 					switch(func3){
-						 case ADD: rd_val = op1 + op2; /*printf("ADD\n");*/break;
+						 case ADD: rd_val = op1 + op2; /*printf("ADD\n")*/;break;
 						 case SLL: rd_val = op1 << op2;/*printf("SLL\n");*/break;
 						 case SLT: if (op1 < op2) rd_val = 1; else rd_val=0;/*printf("SLT\n");*/break;
 						 case SLTU: if ((pc_type)op1 < (pc_type)op2) rd_val = 1; else rd_val=0;/*printf("SLTU\n");*/break;
@@ -31,7 +31,7 @@ r_type alu(opcode_type opcode, func7_type func7, func3_type func3, r_type op1, r
 		case AUIPC: rd_val=op1+op2; pc=rd_val; break;
 		case OP_AL_I://I type instruction
 			switch(func3){
-				case ADD: rd_val = op1 + op2; break; //ADDI
+				case ADD: rd_val = op1 + op2; /*printf("ADDI\n");*/break; //ADDI
 				case SLL: op2= op2 & R_MASK; rd_val = op1 << op2;/*printf("SLLI\n");*/break; //SLLI
 				case SLT: if (op1 < op2) rd_val = 1; else rd_val=0;/*printf("SLTI\n");*/break; //SLTI
 				case SLTU: if ((pc_type)op1 < (pc_type)op2) rd_val = 1; else rd_val=0;/*printf("SLTIU\n");*/break; //SLTIU
