@@ -7,17 +7,18 @@ RISC5 DATAPATH IMPLEMENTATION
 * datapath connected to 16 KB cache memory (16 byte blocks)
 * cache is structured in scalable form
 
-HEADERS
+HEADERS:
 
 cache.hpp
 datapath.hpp
-DATAPATH FUNCTIONS
+
+DATAPATH FUNCTIONS:
 datapath.cpp
 decoder.cpp
 alu.cpp
 lsu.cpp
 
-CACHE FUNCTIONS
+CACHE FUNCTIONS:
 
 cache.cpp
 fetch.cpp
