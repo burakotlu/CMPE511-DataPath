@@ -41,11 +41,13 @@ void decoder(i_type instruction){
 			case OP_AL_R:	op1=rf[rs1];
 							op2=rf[rs2];
 							rf[rd]=alu(opc,funct7,funct3,op1,op2);
-							//printf("R format instruction..");pc=pc+4;
+							//printf("R format instruction..");
+							pc=pc+4;
 							break;
 			case OP_AL_I: 	op1=rf[rs1]; op2=(r_type)imm_11_0;
 							rf[rd]=alu(opc,funct7,funct3,op1,op2);
-							//printf("I format instruction..");pc=pc+4;
+							//printf("I format instruction..");
+							pc=pc+4;
 							break;
 			case AUIPC:   	op1=(r_type)pc;
 							op2=(r_type)imm_31_12;
@@ -103,14 +105,10 @@ void decoder(i_type instruction){
 							pc=(pc_type)(rf[rs1]+(pc_type)imm_11_0)&(-2);
 							break;
 			default: error=1;
-
 			}
-
 	//printf("op1: %x op2: %x\n",(uint32_t)op1,(uint32_t)op2);
 	//printf("execution done.\n");
-	//printf("registers:");
-	//for(int j=0;j<32;j++) printf("0x%x ",(uint32_t)rf[j]);
+	//printf("registers:\n");
+	//for(int j=0;j<32;j++) {printf("0x%x ",(uint32_t)rf[j]);if(j==15)printf("\n");}
 	//printf("\n");
-
-
 }
