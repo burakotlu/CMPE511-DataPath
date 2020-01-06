@@ -1,6 +1,10 @@
 # CMPE511-DataPath
 RISC5 DATAPATH IMPLEMENTATION
 
+* 32bit instruction set (B,I,J,S formats)
+* Datapath with decoder, Alu, load/store unit
+* datapath connected to 16 KB cache memory (16 byte blocks)
+
 HEADERS
 
 cache.hpp
