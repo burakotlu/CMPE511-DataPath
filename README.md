@@ -11,12 +11,14 @@ HEADERS:
 
 cache.hpp
 datapath.hpp
+
 DATAPATH FUNCTIONS:
 
 datapath.cpp
 decoder.cpp
 alu.cpp
 lsu.cpp
+
 CACHE FUNCTIONS:
 
 cache.cpp
